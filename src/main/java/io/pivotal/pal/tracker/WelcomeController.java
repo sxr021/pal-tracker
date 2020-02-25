@@ -20,4 +20,5 @@ public class WelcomeController {
     public String sayHello() {
         return message;
     }
+
 }
