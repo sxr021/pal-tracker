@@ -45,7 +45,8 @@ public class TimeEntryApiTest {
     }
 
     @Test
-    public void testList() throws Exception {
+    public void
+    testList() throws Exception {
         Long id = createTimeEntry();
 
 
@@ -115,6 +116,8 @@ public class TimeEntryApiTest {
         assertThat(deletedReadResponse.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
+
+    @Test
     private Long createTimeEntry() {
         HttpEntity<TimeEntry> entity = new HttpEntity<>(timeEntry);
 
@@ -122,6 +125,6 @@ public class TimeEntryApiTest {
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 
-        return response.getBody().getId();
+        return (Long) response.getBody().getId();
     }
 }
